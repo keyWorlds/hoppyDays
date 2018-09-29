@@ -1,17 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/Players/bunny1_stand.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GFX/Players/bunny1_ready.png" type="Texture" id=3]
-[ext_resource path="res://Assets/GFX/Players/bunny1_walk1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/GFX/Players/bunny1_walk2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/GFX/Players/bunny1_hurt.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/Players/bunny1_jump.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/Players/bunny1_walk1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/Players/bunny1_walk2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/Players/bunny1_hurt.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Animation.gd" type="Script" id=8]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 60.4673
-height = 40.8824
+extents = Vector2( 60.2292, 85.2038 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -21,20 +22,25 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( 208.208, 206.12 )
+position = Vector2( 208.506, 203.137 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -53,5 +59,6 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "idle"
+script = ExtResource( 8 )
 
 
