@@ -26,14 +26,16 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 196623, 0, 0, 393217, 4, 0, 589832, 0, 0 )
+tile_data = PoolIntArray( 65581, 3, 0, 196623, 0, 0, 393217, 4, 0, 524329, 3, 0, 589832, 0, 0, 589847, 5, 0, 589859, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1179652, 5, 0, 1179689, 5, 0, 1310736, 3, 0, 1310770, 5, 0, 1507338, 5, 0, 1638439, 5, 0, 1703938, 3, 0, 1703964, 5, 0, 1900554, 5, 0, 1900583, 3, 0, 2162707, 3, 0, 2162721, 5, 0 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -3.01883, 29.7485 )
+limit_left = 0
+limit_bottom = 3000
 smoothing_enabled = true
-_sections_unfolded = [ "Smoothing" ]
+_sections_unfolded = [ "Limit", "Offset", "Smoothing" ]
 
 

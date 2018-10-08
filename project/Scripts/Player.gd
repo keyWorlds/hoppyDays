@@ -28,16 +28,13 @@ func run():
 		movement.x -= horizontalSpeed
 	if Input.is_action_pressed("ui_right"):
 		movement.x += horizontalSpeed
-		
 
 func jump():
 	if Input.is_action_pressed("ui_up") && is_on_floor():
 		movement.y += verticalSpeed
 
 func fall(delta):
-	if is_on_floor():
-		movement.y = 0
-	elif is_on_ceiling():
+	if is_on_floor() or is_on_ceiling():
 		movement.y = 0
 	else:
 		movement.y += grav * delta
