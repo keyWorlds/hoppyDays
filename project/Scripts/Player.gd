@@ -7,6 +7,8 @@ var verticalSpeed = -1600
 var movement = Vector2()
 var UP = Vector2(0, -1)
 
+var worldLimit = 3000
+
 func _physics_process(delta):
 	update_movement(delta)
 
@@ -38,3 +40,9 @@ func fall(delta):
 		movement.y = 0
 	else:
 		movement.y += grav * delta
+	
+	if movement.y > worldLimit:
+		the_end()
+
+func the_end():
+	get_tree().change_scene("res://scenes/GameOver.tscn")
