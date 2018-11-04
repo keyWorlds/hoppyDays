@@ -13,6 +13,10 @@ config_version=3
 config/name="hoppyDays"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
 [display]
 
 window/size/width=1920
