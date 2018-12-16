@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PlatformTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/GUI.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=6]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
@@ -47,19 +46,17 @@ _sections_unfolded = [ "Limit", "Offset", "Smoothing" ]
 
 [node name="GUI" parent="Player/Camera2D" index="1" instance=ExtResource( 5 )]
 
-script = ExtResource( 6 )
-
 [node name="SpikesContainer" type="Node2D" parent="." index="2"]
 
-[node name="Spikes" parent="SpikesContainer" index="0" instance=ExtResource( 7 )]
+[node name="Spikes" parent="SpikesContainer" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 693.515, 548.258 )
 
-[node name="Spikes2" parent="SpikesContainer" index="1" instance=ExtResource( 7 )]
+[node name="Spikes2" parent="SpikesContainer" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 2173.19, 803.468 )
 
-[node name="Spikes3" parent="SpikesContainer" index="2" instance=ExtResource( 7 )]
+[node name="Spikes3" parent="SpikesContainer" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 1905.59, 1636.25 )
 scale = Vector2( 0.936359, 1 )
