@@ -12,6 +12,7 @@
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
+initial_life_points = 5
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -52,15 +53,15 @@ script = ExtResource( 6 )
 
 [node name="Spikes" parent="SpikesContainer" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 692.544, 555.052 )
+position = Vector2( 693.515, 548.258 )
 
 [node name="Spikes2" parent="SpikesContainer" index="1" instance=ExtResource( 7 )]
 
-position = Vector2( 2172.29, 809.23 )
+position = Vector2( 2173.19, 803.468 )
 
 [node name="Spikes3" parent="SpikesContainer" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 1903.38, 1645.81 )
+position = Vector2( 1905.59, 1636.25 )
 scale = Vector2( 0.936359, 1 )
 
 

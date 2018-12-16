@@ -29,7 +29,7 @@ texture = ExtResource( 2 )
 
 visible = false
 build_mode = 0
-polygon = PoolVector2Array( -47.5849, 26.9578, -33.9033, -26.5891, 33.7653, -26.5026, 48.2644, 26.7325 )
+polygon = PoolVector2Array( -48.68, 24.5602, -33.9033, -26.5891, 33.7653, -26.5026, 47.2415, 24.5602 )
 
 [connection signal="body_entered" from="." to="." method="_on_Spikes_body_entered"]
 
