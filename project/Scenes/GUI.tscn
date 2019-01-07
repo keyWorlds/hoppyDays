@@ -79,7 +79,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
 }
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -117,7 +117,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 90.0
 margin_top = 50.0
-margin_right = 361.0
+margin_right = 374.0
 margin_bottom = 123.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

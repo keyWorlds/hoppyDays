@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
@@ -40,7 +40,7 @@ tile_data = PoolIntArray( 65581, 3, 0, 196623, 0, 0, 393217, 4, 0, 524329, 3, 0,
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( -3.01883, 29.7485 )
+position = Vector2( 0.072052, 32.8394 )
 limit_left = 0
 limit_bottom = 3000
 smoothing_enabled = true
@@ -68,36 +68,35 @@ scale = Vector2( 0.936359, 1 )
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 1224.59, 120.422 )
-frame = 0
 
 [node name="Coin5" parent="Coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1547.64, 499.649 )
-frame = 5
+frame = 2
 
 [node name="Coin6" parent="Coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 360.8, 1061.47 )
-frame = 5
+frame = 2
 
 [node name="Coin7" parent="Coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 1105.21, 106.377 )
-frame = 5
+frame = 2
 
 [node name="Coin2" parent="Coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2767.74, 435.779 )
-frame = 4
+frame = 1
 
 [node name="Coin3" parent="Coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 2581.38, 1539.96 )
-frame = 5
+frame = 2
 
 [node name="Coin4" parent="Coins" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 3308.18, 1209.17 )
-frame = 5
+frame = 2
 
 
