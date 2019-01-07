@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PlatformTileset.tres" type="TileSet" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
@@ -60,5 +61,27 @@ position = Vector2( 2173.19, 803.468 )
 
 position = Vector2( 1905.59, 1636.25 )
 scale = Vector2( 0.936359, 1 )
+
+[node name="Coins" type="Node2D" parent="." index="3"]
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 1224.59, 120.422 )
+frame = 5
+
+[node name="Coin2" parent="Coins" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 2767.74, 435.779 )
+frame = 3
+
+[node name="Coin3" parent="Coins" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 2581.38, 1539.96 )
+frame = 4
+
+[node name="Coin4" parent="Coins" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 3308.18, 1209.17 )
+frame = 4
 
 
