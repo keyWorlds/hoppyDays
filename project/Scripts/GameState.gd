@@ -19,6 +19,7 @@ func ouch():
 	Global.Player.damage()
 	animateGUI("Hurt")
 	updateGUI()
+	Global.HurtSFX.play()
 	if life_points < 0:
 		the_end()
 

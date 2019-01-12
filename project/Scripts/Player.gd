@@ -37,6 +37,7 @@ func run():
 func jump():
 	if Input.is_action_pressed("ui_up") && is_on_floor():
 		movement.y += verticalSpeed
+		Global.JumpSFX.play()
 
 func damage():
 	movement.y = verticalSpeed
