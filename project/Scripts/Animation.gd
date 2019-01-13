@@ -3,10 +3,10 @@ extends AnimatedSprite
 func update(movement):
 	
 	# horizontal movement
-	if movement.x > 0:
+	if movement.x < 0:
 		flip_h = false
 		play("run")
-	elif movement.x < 0:
+	elif movement.x > 0:
 		flip_h = true
 		play("run")
 	else:

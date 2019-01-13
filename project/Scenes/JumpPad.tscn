@@ -44,6 +44,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -69.6719, -33.2766 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 centered = false
 offset = Vector2( -75, 0 )
