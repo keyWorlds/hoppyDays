@@ -1,13 +1,14 @@
 extends KinematicBody2D
 
-var horizontalSpeed = 750
-var grav = 3600
-var verticalSpeed = -1600
+const HORIZONTAL_SPEED = 750
+const GRAVITY = 3600
+const VERTICAL_SPEED = -1600
 
 var movement = Vector2()
-var UP = Vector2(0, -1)
+const UP = Vector2(0, -1)
+const JUMP_BOOST = 2
 
-var worldLimit = 3000
+var WORLD_LIMIT = 4000
 
 func _ready():
 	Global.Player = self
@@ -30,23 +31,26 @@ func update_animation(movement):
 func run():
 	movement.x = 0
 	if Input.is_action_pressed("ui_left"):
-		movement.x -= horizontalSpeed
+		movement.x -= HORIZONTAL_SPEED
 	if Input.is_action_pressed("ui_right"):
-		movement.x += horizontalSpeed
+		movement.x += HORIZONTAL_SPEED
 
 func jump():
 	if Input.is_action_pressed("ui_up") && is_on_floor():
-		movement.y += verticalSpeed
+		movement.y += VERTICAL_SPEED
 		Global.JumpSFX.play()
 
+func boost():
+	movement.y = VERTICAL_SPEED * JUMP_BOOST
+
 func damage():
-	movement.y = verticalSpeed
+	movement.y = VERTICAL_SPEED
 
 func fall(delta):
 	if is_on_floor() or is_on_ceiling():
 		movement.y = 0
 	else:
-		movement.y += grav * delta
+		movement.y += GRAVITY * delta
 	
-	if movement.y > worldLimit:
+	if movement.y > WORLD_LIMIT:
 		Global.GameState.the_end()

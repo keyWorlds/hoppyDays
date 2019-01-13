@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PlatformTileset.tres" type="TileSet" id=2]
@@ -8,14 +8,13 @@
 [ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/SFX/Summer_Park.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Assets/SFX/coin_SFX.wav" type="AudioStream" id=9]
-[ext_resource path="res://Scripts/CoinSFX.gd" type="Script" id=10]
-[ext_resource path="res://Assets/SFX/pain.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Scripts/HurtSFX.gd" type="Script" id=12]
-[ext_resource path="res://Assets/SFX/jump1.ogg" type="AudioStream" id=13]
-[ext_resource path="res://Scripts/JumpSFX.gd" type="Script" id=14]
+[ext_resource path="res://Assets/SFX/pain.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/HurtSFX.gd" type="Script" id=10]
+[ext_resource path="res://Assets/SFX/jump1.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/JumpSFX.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/JumpPad.tscn" type="PackedScene" id=13]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
@@ -41,9 +40,12 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65581, 3, 0, 196623, 0, 0, 393217, 4, 0, 524329, 3, 0, 589832, 0, 0, 589847, 5, 0, 589859, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1179652, 5, 0, 1179689, 5, 0, 1310736, 3, 0, 1310770, 5, 0, 1507338, 5, 0, 1638439, 5, 0, 1703938, 3, 0, 1703964, 5, 0, 1900554, 5, 0, 1900583, 3, 0, 2162707, 3, 0, 2162721, 5, 0 )
+tile_data = PoolIntArray( 65581, 3, 0, 196623, 0, 0, 393217, 4, 0, 524329, 3, 0, 589832, 0, 0, 589847, 5, 0, 589859, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1179652, 5, 0, 1179689, 5, 0, 1310736, 3, 0, 1310770, 5, 0, 1507338, 5, 0, 1638446, 0, 0, 1703938, 3, 0, 1703964, 5, 0, 1900583, 3, 0, 1966092, 0, 0, 2162707, 3, 0, 2162721, 5, 0 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 187.857, 280.572 )
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
 
@@ -56,6 +58,8 @@ _sections_unfolded = [ "Limit", "Offset", "Smoothing" ]
 [node name="GUI" parent="Player/Camera2D" index="1" instance=ExtResource( 5 )]
 
 [node name="SpikesContainer" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Spikes" parent="SpikesContainer" index="0" instance=ExtResource( 6 )]
 
@@ -75,35 +79,38 @@ scale = Vector2( 0.936359, 1 )
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 1224.59, 120.422 )
-frame = 0
 
 [node name="Coin5" parent="Coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1547.64, 499.649 )
+frame = 1
 
 [node name="Coin6" parent="Coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 360.8, 1061.47 )
+frame = 1
 
 [node name="Coin7" parent="Coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 1105.21, 106.377 )
+frame = 1
 
 [node name="Coin2" parent="Coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2767.74, 435.779 )
+frame = 1
 
 [node name="Coin3" parent="Coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 2581.38, 1539.96 )
+frame = 1
 
 [node name="Coin4" parent="Coins" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 3308.18, 1209.17 )
+frame = 1
 
 [node name="Sounds" type="Node2D" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
 
@@ -116,7 +123,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="CoinSFX" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
+[node name="HurtSFX" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
 
 stream = ExtResource( 9 )
 volume_db = -15.0
@@ -128,7 +135,7 @@ bus = "Master"
 area_mask = 1
 script = ExtResource( 10 )
 
-[node name="HurtSFX" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
 
 stream = ExtResource( 11 )
 volume_db = -15.0
@@ -140,16 +147,18 @@ bus = "Master"
 area_mask = 1
 script = ExtResource( 12 )
 
-[node name="JumpSFX" type="AudioStreamPlayer2D" parent="Sounds" index="3"]
+[node name="Node2D" type="Node2D" parent="." index="5"]
 
-stream = ExtResource( 13 )
-volume_db = -15.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-script = ExtResource( 14 )
+[node name="JumpPad" parent="Node2D" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 1255.85, 1200.94 )
+
+[node name="JumpPad2" parent="Node2D" index="1" instance=ExtResource( 13 )]
+
+position = Vector2( 2668.92, 1806.8 )
+
+[node name="JumpPad3" parent="Node2D" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 973.715, 1869.34 )
 
 
