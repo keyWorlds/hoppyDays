@@ -45,3 +45,9 @@ func animateGUI(animation):
 
 func the_end():
 	get_tree().change_scene("res://scenes/GameOver.tscn")
+
+func victory():
+	get_tree().change_scene("res://scenes/Victory.tscn")
+
+func _on_Portal_body_entered(body):
+	victory()
