@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PlatformTileset.tres" type="TileSet" id=2]
@@ -14,9 +14,10 @@
 [ext_resource path="res://Scripts/JumpSFX.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/JumpPad.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Spikey.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/EvilCloud.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=16]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
@@ -82,31 +83,36 @@ editor/display_folded = true
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 1224.59, 120.422 )
-frame = 0
 
 [node name="Coin5" parent="Coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1547.64, 499.649 )
+frame = 4
 
 [node name="Coin6" parent="Coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 360.8, 1061.47 )
+frame = 4
 
 [node name="Coin7" parent="Coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 1105.21, 106.377 )
+frame = 4
 
 [node name="Coin2" parent="Coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 2767.74, 435.779 )
+frame = 4
 
 [node name="Coin3" parent="Coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 2581.38, 1539.96 )
+frame = 4
 
 [node name="Coin4" parent="Coins" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 3308.18, 1209.17 )
+frame = 4
 
 [node name="Sounds" type="Node2D" parent="." index="4"]
 
@@ -165,7 +171,11 @@ position = Vector2( 965.715, 1883.34 )
 
 position = Vector2( 1407.96, 2034.78 )
 
-[node name="Portal" parent="." index="7" instance=ExtResource( 15 )]
+[node name="EvilCloud" parent="Enemies" index="1" instance=ExtResource( 15 )]
+
+position = Vector2( 2180.47, 108.041 )
+
+[node name="Portal" parent="." index="7" instance=ExtResource( 16 )]
 
 position = Vector2( 296, 1560 )
 

@@ -44,10 +44,10 @@ func animateGUI(animation):
 	GUI.animate(animation)
 
 func the_end():
-	get_tree().change_scene("res://scenes/GameOver.tscn")
+	get_tree().change_scene(Global.GameOver)
 
 func victory():
-	get_tree().change_scene("res://scenes/Victory.tscn")
+	get_tree().change_scene(Global.Victory)
 
 func _on_Portal_body_entered(body):
 	victory()
