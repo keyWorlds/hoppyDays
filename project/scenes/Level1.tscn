@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PlatformTileset.tres" type="TileSet" id=2]
@@ -12,8 +12,7 @@
 [ext_resource path="res://Scripts/HurtSFX.gd" type="Script" id=10]
 [ext_resource path="res://Assets/SFX/jump1.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scripts/JumpSFX.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/JumpPad.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=13]
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -41,7 +40,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 327695, 3, 0, 393217, 5, 0, 589832, 3, 0, 589847, 5, 0, 589877, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1179652, 5, 0, 1310770, 5, 0, 1441811, 5, 0, 1507338, 5, 0, 1703938, 3, 0, 1703986, 3, 0, 1900583, 3, 0, 1966092, 3, 0, 1966108, 5, 0, 2162707, 3, 0, 2162721, 5, 0 )
+tile_data = PoolIntArray( 327695, 3, 0, 393217, 5, 0, 589832, 3, 0, 589847, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1114168, 5, 0, 1179652, 5, 0, 1310770, 5, 0, 1441811, 5, 0, 1507338, 5, 0, 1703938, 3, 0, 1703986, 3, 0, 1900583, 3, 0, 1966092, 3, 0, 1966108, 5, 0, 2162707, 3, 0, 2162721, 5, 0 )
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -66,6 +65,14 @@ position = Vector2( 693.515, 548.258 )
 [node name="Spikes2" parent="SpikesContainer" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 2173.19, 803.468 )
+
+[node name="Spikes3" parent="SpikesContainer" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 1513.46, 2081.58 )
+
+[node name="Spikes4" parent="SpikesContainer" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 208.911, 1635.86 )
 
 [node name="Coins" type="Node2D" parent="." index="3"]
 
@@ -151,23 +158,9 @@ bus = "Master"
 area_mask = 1
 script = ExtResource( 12 )
 
-[node name="JumpPads" type="Node2D" parent="." index="5"]
+[node name="Portal" parent="." index="5" instance=ExtResource( 13 )]
 
-[node name="JumpPad" parent="JumpPads" index="0" instance=ExtResource( 13 )]
-
-position = Vector2( 1250.82, 1375.84 )
-
-[node name="JumpPad2" parent="JumpPads" index="1" instance=ExtResource( 13 )]
-
-position = Vector2( 3229, 1247.78 )
-
-[node name="JumpPad3" parent="JumpPads" index="2" instance=ExtResource( 13 )]
-
-position = Vector2( 965.715, 1883.34 )
-
-[node name="Portal" parent="." index="6" instance=ExtResource( 14 )]
-
-position = Vector2( 3502.86, 484.499 )
+position = Vector2( 3688.18, 942.916 )
 
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
 

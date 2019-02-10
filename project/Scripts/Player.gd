@@ -30,13 +30,13 @@ func update_animation(movement):
 
 func run():
 	movement.x = 0
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		movement.x -= HORIZONTAL_SPEED
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		movement.x += HORIZONTAL_SPEED
 
 func jump():
-	if Input.is_action_pressed("ui_up") && is_on_floor():
+	if Input.is_action_pressed("up") && is_on_floor():
 		movement.y += VERTICAL_SPEED
 		Global.JumpSFX.play()
 
