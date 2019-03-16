@@ -1,7 +1,6 @@
 extends AnimatedSprite
 
-func update(movement):
-	
+func update_animatedSprite(movement):
 	# horizontal movement
 	if movement.x < 0:
 		flip_h = false

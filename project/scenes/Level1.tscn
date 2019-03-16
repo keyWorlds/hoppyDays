@@ -14,154 +14,94 @@
 [ext_resource path="res://Scripts/JumpSFX.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=13]
 
-[node name="Level1" type="Node2D" index="0"]
-
+[node name="Level1" type="Node2D"]
 position = Vector2( 49.7422, 81.3964 )
 script = ExtResource( 1 )
-initial_life_points = 5
-coin_target = 3
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
-
+[node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -1.14441e-005, -3.8147e-005 )
-mode = 0
 tile_set = ExtResource( 2 )
-cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 327695, 3, 0, 393217, 5, 0, 589832, 3, 0, 589847, 5, 0, 851998, 3, 0, 1114135, 5, 0, 1114168, 5, 0, 1179652, 5, 0, 1310770, 5, 0, 1441811, 5, 0, 1507338, 5, 0, 1703938, 3, 0, 1703986, 3, 0, 1900583, 3, 0, 1966092, 3, 0, 1966108, 5, 0, 2162707, 3, 0, 2162721, 5, 0 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
-
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 187.857, 280.572 )
 
-[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
-
+[node name="Camera2D" parent="Player" instance=ExtResource( 4 )]
 position = Vector2( 4.98291, 32.8394 )
 limit_left = 0
 limit_bottom = 3000
 smoothing_enabled = true
-_sections_unfolded = [ "Limit", "Offset", "Smoothing" ]
 
-[node name="GUI" parent="Player/Camera2D" index="1" instance=ExtResource( 5 )]
+[node name="GUI" parent="Player/Camera2D" instance=ExtResource( 5 )]
 
-[node name="SpikesContainer" type="Node2D" parent="." index="2"]
+[node name="SpikesContainer" type="Node2D" parent="."]
 
-[node name="Spikes" parent="SpikesContainer" index="0" instance=ExtResource( 6 )]
-
+[node name="Spikes" parent="SpikesContainer" instance=ExtResource( 6 )]
 position = Vector2( 693.515, 548.258 )
 
-[node name="Spikes2" parent="SpikesContainer" index="1" instance=ExtResource( 6 )]
-
+[node name="Spikes2" parent="SpikesContainer" instance=ExtResource( 6 )]
 position = Vector2( 2173.19, 803.468 )
 
-[node name="Spikes3" parent="SpikesContainer" index="2" instance=ExtResource( 6 )]
-
+[node name="Spikes3" parent="SpikesContainer" instance=ExtResource( 6 )]
 position = Vector2( 1513.46, 2081.58 )
 
-[node name="Spikes4" parent="SpikesContainer" index="3" instance=ExtResource( 6 )]
-
+[node name="Spikes4" parent="SpikesContainer" instance=ExtResource( 6 )]
 position = Vector2( 208.911, 1635.86 )
 
-[node name="Coins" type="Node2D" parent="." index="3"]
+[node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
-
+[node name="Coin" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1208.3, 162.776 )
 
-[node name="Coin5" parent="Coins" index="1" instance=ExtResource( 7 )]
-
+[node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1547.64, 499.649 )
 frame = 4
 
-[node name="Coin6" parent="Coins" index="2" instance=ExtResource( 7 )]
-
+[node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 360.8, 1061.47 )
 frame = 4
 
-[node name="Coin7" parent="Coins" index="3" instance=ExtResource( 7 )]
-
+[node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1105.21, 106.377 )
 frame = 4
 
-[node name="Coin3" parent="Coins" index="4" instance=ExtResource( 7 )]
-
+[node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2733.74, 1790.27 )
 frame = 4
 
-[node name="Coin4" parent="Coins" index="5" instance=ExtResource( 7 )]
-
+[node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2607.39, 1775.83 )
 frame = 4
 
-[node name="Coin8" parent="Coins" index="6" instance=ExtResource( 7 )]
-
+[node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2697.64, 1656.7 )
 frame = 4
 
-[node name="Coin9" parent="Coins" index="7" instance=ExtResource( 7 )]
-
+[node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1042.65, 252.163 )
 frame = 3
 
-[node name="Coin10" parent="Coins" index="8" instance=ExtResource( 7 )]
-
+[node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1300.03, 252.163 )
 
-[node name="Sounds" type="Node2D" parent="." index="4"]
-
+[node name="Sounds" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="Music" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
-
+[node name="Music" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 8 )
-volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
-[node name="HurtSFX" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
-
+[node name="HurtSFX" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 9 )
 volume_db = -15.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 script = ExtResource( 10 )
 
-[node name="JumpSFX" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
-
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 11 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 script = ExtResource( 12 )
 
-[node name="Portal" parent="." index="5" instance=ExtResource( 13 )]
-
+[node name="Portal" parent="." instance=ExtResource( 13 )]
 position = Vector2( 3688.18, 942.916 )
 
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
-
-

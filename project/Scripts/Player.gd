@@ -24,9 +24,10 @@ func update_movement(delta):
 	fall(delta)
 	jump()
 	move_and_slide(movement, UP)
+	pass
 
 func update_animation(movement):
-	$AnimatedSprite.update(movement)
+	$AnimatedSprite.update_animatedSprite(movement)
 
 func run():
 	movement.x = 0
