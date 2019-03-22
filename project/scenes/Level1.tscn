@@ -53,37 +53,39 @@ position = Vector2( 208.911, 1635.86 )
 
 [node name="Coin" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1208.3, 162.776 )
+frame = 4
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1547.64, 499.649 )
-frame = 4
+frame = 0
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 360.8, 1061.47 )
-frame = 4
+frame = 0
 
 [node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1105.21, 106.377 )
-frame = 4
+frame = 0
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2733.74, 1790.27 )
-frame = 4
+frame = 0
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2607.39, 1775.83 )
-frame = 4
+frame = 0
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 2697.64, 1656.7 )
-frame = 4
+frame = 0
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1042.65, 252.163 )
-frame = 3
+frame = 5
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
 position = Vector2( 1300.03, 252.163 )
+frame = 4
 
 [node name="Sounds" type="Node2D" parent="."]
 editor/display_folded = true

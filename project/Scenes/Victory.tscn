@@ -5,13 +5,10 @@
 [node name="Victory" instance=ExtResource( 1 )]
 
 [node name="Label" parent="CenterContainer" index="0"]
-
 margin_left = 148.0
 margin_right = 875.0
 text = "Victory!"
 
 [node name="Label" parent="Reload" index="0"]
-
 text = "Play again!"
-
 
