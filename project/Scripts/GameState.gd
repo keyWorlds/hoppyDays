@@ -6,6 +6,10 @@ export var coin_target = 3
 var life_points
 var coins = 0
 
+enum GameModes { EASY }
+
+var gameMode = GameModes.EASY
+
 onready var GUI = Global.GUI
 
 func _ready():
@@ -51,3 +55,15 @@ func victory():
 
 func _on_Portal_body_entered(body):
 	victory()
+
+func setModeEasy():
+	print("Game mode is " + gameMode)
+	get_tree().change_scene(Global.Level1)
+
+func setModeMedium():
+	gameMode = GameModes.MEDIUM
+	print("Game mode is " + gameMode)
+
+func setModeHard():
+	gameMode = GameModes.HARD
+	print("Game mode is " + gameMode)
